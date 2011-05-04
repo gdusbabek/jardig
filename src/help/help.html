@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>Jardig help</title>
+</head>
+<body>
+<p>
+    <h1>Jardig Help</h1>
+    <ol type = "1">
+       <li>The <b>Help</b> button in the upper right produces this message.</li>
+       <li>Enter the name of the class you are looking for in the <b>Class Name:</b> field.</li>
+       <li>Check your options:
+           <ol type="A">
+               <li><b>Recurse Directories</b> tells the digger to exhaustively search subdirectories.</li>
+               <li><b>Recurse Archives</b> tells the digger to dig into archives nested inside other archives (.ear and .war for example).</li>
+               <li><b>Summarize at end</b> is useful if you have <b>Log INFO</b> turned on. It prints a succint summary of the results after scanning is finished.</li>
+               <li><b>Log INFO</b> turns on rich messages. You will be notified every time a directory is entered or a file is scanned.</li>
+               <li><b>Log ERROR</b> logs error conditions.</li>
+               <li><b>Log EXCEPTION</b> logs exceptions.</li>
+               <li><b>Log FIND</b> logs class name matches.  You must have this or <b>Summarize at end</b> turned on in order to find out the results of your scan.</li>
+               <li><b>Log NEST</b> enables additional output when recursively scanning archives within other archives.</li>
+           </ol>
+       </li>
+       <li>Drag the directories you wish to scan into the <b>Directories to scan</b> list. If you wish to remove a directory, select it and press delete (or backspace).</li>
+       <li>Click the <b>Go!</b> button.</li>
+       <li>You should see output (as much as you opted for) in the <b>Scan log</b> pane on the bottom.
+           To clear the output pane, triple-click it.</li>
+   </ol>
+<p>
+    Source, javadocs and this help document are included in the jar that contains the application.
+</body>
+</html>

@@ -1,0 +1,50 @@
+<project name = "jardig" basedir = "." default = "jar">
+    <property name = "src" value = "src" />
+    <property name = "build" value = "classes" />
+    <property name = "dist" value = "dist" />
+
+    <target name = "clean">
+        <delete dir = "${build}" />
+        <delete dir = "${dist}" />
+    </target>
+
+    <target name = "prelims">
+        <mkdir dir = "${build}" />
+        <mkdir dir = "${dist}" />
+    </target>
+
+    <target name = "compile" depends="prelims">
+        <javac srcdir = "${src}" destdir="${build}">
+            <include name="org/dusbabek/**"/>
+        </javac>
+    </target>
+
+    <target name = "jar" depends="compile">
+        <jar destfile="${dist}/jardig.jar" manifest="${src}/META-INF/MANIFEST.MF">
+            <fileset dir="${build}">
+                <include name="**/*.class"/>
+            </fileset>
+            <fileset dir="${src}">
+                <include name="**/*.html"/>
+            </fileset>
+        </jar>
+    </target>
+
+    <target name="src-zip" depends="prelims">
+        <zip destfile="${dist}/jardig-src.zip">
+            <fileset dir="${basedir}">
+                <include name="src/**/*"/>
+                <include name="build.xml"/>
+            </fileset>
+        </zip>
+    </target>
+
+    <target name="bundle" depends="src-zip,jar">
+        <zip destfile="${dist}/jardig.zip">
+            <fileset dir="${dist}">
+                <include name="*.jar"/>
+                <include name="*.zip"/>
+            </fileset>
+        </zip>
+    </target>
+</project>
