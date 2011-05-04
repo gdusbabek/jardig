@@ -47,4 +47,8 @@
             </fileset>
         </zip>
     </target>
+  
+    <target name="run" depends="jar">
+      <java jar="${dist}/jardig.jar" fork="true"/>
+    </target>
 </project>
