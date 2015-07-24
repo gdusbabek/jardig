@@ -1,6 +1,6 @@
 # Jardig
 
-I wrote jardig some time in 2004 to help me find the locations of some runtime dependencies in an application I was working on.
+I wrote jardig some time in 2004 to help me find the locations of some runtime class dependencies in an application I was working on. It scans through directories, jars and zips looking for the class you specify.
 
 ### Building
 
